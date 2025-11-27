@@ -63,7 +63,11 @@ fileInput.addEventListener('change', (e) => {
 
 function handleFile(file) {
     if (!file.type.startsWith('image/')) {
-        alert('Por favor, selecione uma imagem válida.');
+        Swal.fire({
+            title: "Ops!",
+            text: "Por favor, selecione uma imagem válida.",
+            icon: "error"
+        });
         return;
     }
 
@@ -83,6 +87,11 @@ function handleFile(file) {
                 pixInput.value = qr;
                 console.log("PIX encontrado:", qr);
             } else {
+                Swal.fire({
+                    title: "Atenção",
+                    text: "Nenhum QR detectado. Por favor, selecione uma imagem válida.",
+                    icon: "warning"
+                });
                 console.warn("Nenhum QR detectado.");
             }
         };
@@ -182,6 +191,11 @@ async function fetchJwtContent(url) {
         const text = await resp.text();
         return text;
     } catch (err) {
+        Swal.fire({
+            title: "Falha ao buscar JWT!",
+            text: "É provável que a cobrança não esteja mais ativa.",
+            icon: "warning"
+        });
         console.error("Erro ao buscar JWT:", err);
         return null;
     }
