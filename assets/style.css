@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #F6F8FC;
+    color: #2F2F2F;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 968px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2F2F2F;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.input-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    height: fit-content;
+}
+
+.input-label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+    color: #2F2F2F;
+}
+
+.upload-area {
+    border: 2px dashed #0BA1C2;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    background-color: #F6F8FC;
+}
+
+.upload-area:hover {
+    background-color: #E8F4F8;
+    border-color: #098799;
+}
+
+.upload-area.dragover {
+    background-color: #E8F4F8;
+    border-color: #098799;
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    color: #0BA1C2;
+}
+
+.upload-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.upload-subtext {
+    font-size: 14px;
+    color: #999;
+}
+
+.paste-indicator {
+    display: none;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #E8F4F8;
+    color: #0BA1C2;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.paste-indicator.show {
+    display: block;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    margin-top: 16px;
+    border-radius: 8px;
+    display: none;
+}
+
+.pix-input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+    color: #2F2F2F;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.pix-input:focus {
+    outline: none;
+    border-color: #0BA1C2;
+}
+
+.json-output {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#json-view {
+    background: #002635;
+    height: inherit;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.json-textarea {
+    width: 100%;
+    flex: 1;
+    min-height: 400px;
+    padding: 16px;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #2F2F2F;
+    background-color: #F6F8FC;
+    resize: vertical;
+}
+
+.json-textarea:focus {
+    outline: none;
+    border-color: #0BA1C2;
+}
+
+.button {
+    background-color: #0BA1C2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 16px;
+}
+
+.button:hover {
+    background-color: #098799;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    color: #999;
+    font-size: 14px;
+    font-weight: 500;
+}
